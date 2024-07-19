@@ -10,7 +10,6 @@ def signup(request):
         form = SignupForm(request.POST)
         print('Hello there')
         if form.is_valid():
-            print('form is valid')
             user = form.save()
             login(request,user)
             return redirect('frontpage')
