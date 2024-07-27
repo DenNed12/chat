@@ -1,0 +1,21 @@
+{% extends "core/index.html" %}
+
+{% block title %} Welcome {% endblock %}
+{% block content %}
+<div class="p-10 text-center">
+        <h1 class=" text-3xl  lg;-10xl text-white">List of available chats</h1>
+</div>
+
+<div class='w-full flex flex-wrap items-center'>
+    {% for room in rooms %}
+    <div class ='w-full lg:w1/4 px-3 py-3 '>
+        <div class="p-4 bg-white shadow rounded-xl text-center">
+            <h3 class="mb-5 text-2xl font-semibold"> {{ room.name }}</h3>
+            <a href="{% url 'chat_rooms:single_room' room.slug %}" class="px-5 py-3 block rounded-xl text-white bg-gray-300"> Join </a>
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+{% endblock content %}

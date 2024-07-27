@@ -1,6 +1,6 @@
 {% extends "core/index.html" %}
 
-{% block title %} Signup | {% endblock title %}
+{% block title %} Login | {% endblock title %}
 {% block content %}
     <div class="p-5 text-center">
         <h1 class="text-3xl lg:-6xl text-white">Signup please</h1>
@@ -14,17 +14,13 @@
 
         <div class="mb-5">
             <label class="text-white">Password</label>
-            {{ form.password1 }}
+            {{ form.password }}
         </div>
 
-        <div class="mb-5">
-            <label class="text-white">Password again</label>
-            {{ form.password2 }}
-        </div>
 
         {% if form.errors %}
             <div class="mb-5 p-4 rounded-xl bg-red-300 text-white">
-
+                Ошибка
             </div>
         {% endif %}
 
