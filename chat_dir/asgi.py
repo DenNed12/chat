@@ -4,7 +4,7 @@ import os
 from django.core.asgi import get_asgi_application
 from channels.auth import AuthMiddlewareStack
 from channels.routing import  URLRouter, ProtocolTypeRouter
-from chat.my_chat.chat_rooms import routing
+from chat_rooms import routing
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'chat_dir.settings')
 
