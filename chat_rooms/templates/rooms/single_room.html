@@ -24,13 +24,14 @@
 
 </div>
  {{ room_name|json_script:"room-name" }}
-`{#request.user.username|json-script:"username"#}
+`{{ request.user.username|json_script:"username"}}
 
     {% block scripts %}
      {# csrf_token #}
         <script>
             const roomName = JSON.parse(document.getElementById('room-name').textContent);
-
+            const userName = JSON.parse(document.getElementById('username').textContent);
+            console.log("Username",userName)
                 const chatSocket = new WebSocket(
                 'ws://'
                 + window.location.host
@@ -44,8 +45,15 @@
             }
             chatSocket.onmessage = function(e) {
                 const data = JSON.parse(e.data);
-                console.log("Data",data)
-<!--                document.querySelector('#message-input').value += (data.message + '\n');-->
+                if (data.message){
+                    let html = "<div class='m-4 bg-gray-200'>"
+                    html +=  "<p class='font-semibold'>"  + data.username + "</p>"
+                    html +=  "<p>"+ data.message + "</p> </div>";
+                document.querySelector("#example-message").innerHTML += html;
+
+                } else {
+                alert("Message is empty");
+                }
             };
 
             chatSocket.onclose = function(e) {
@@ -66,7 +74,9 @@
                 const message = messageInputDom.value;
                 console.log("MessageDom",message)
                 chatSocket.send(JSON.stringify({
-                    'message': message
+                    'message': message,
+                    'username':userName,
+
                 }));
                 console.log("Message sent");
                 messageInputDom.value = '';
