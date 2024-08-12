@@ -44,10 +44,12 @@
             console.log("Connection is established", roomName)
             }
             chatSocket.onmessage = function(e) {
+                console.log(e)
                 const data = JSON.parse(e.data);
+                console.log("Data", data)
                 if (data.message){
                     let html = "<div class='m-4 bg-gray-200'>"
-                    html +=  "<p class='font-semibold'>"  + data.username + "</p>"
+                    html +=  "<p class='font-semibold'>"  + userName + "</p>"
                     html +=  "<p>"+ data.message + "</p> </div>";
                 document.querySelector("#example-message").innerHTML += html;
 
