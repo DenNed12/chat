@@ -21,7 +21,9 @@
                     <button type="submit">Logout</button>
                     </form>
             </div>
-`
+`           <div class="flex items-center space-x-5">
+                <a href="{% url 'user_profile:profile' user.id %}" class ='hover:text-gray-200'>Profile</a>
+            </div>
         {% else %}
             <div class="flex items-center space-x-5">
                 <form method="post" action="{% url 'core:login' %}">
