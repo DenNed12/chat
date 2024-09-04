@@ -10,6 +10,7 @@
         <div class=" example-message space-y-3" id ='example-message'>
                 <div class="p-4 bg-gray-200">
                         <p class="font-semibold">Username </p>
+
                         <p> Sample message </p>
                 </div>
         </div>
@@ -21,7 +22,6 @@
                 <button class="px-5 py-3 rounded-xl text=white bg-blue-500 hover:bg-blue-700" id="message-submit"> Submit</button>
 
         </form>
-
 </div>
  {{ room_name|json_script:"room-name" }}
 `{{ request.user.username|json_script:"username"}}

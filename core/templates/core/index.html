@@ -14,7 +14,7 @@
         {% if request.user.is_authenticated %}
 
             <div class="flex items-center space-x-5">
-                  <a href="" class ='hover:text-gray-200'>Join chat</a>
+                  <a href="{% url 'chat_rooms:rooms' %}" class='hover:text-gray-200'>Join chat</a>
 
                     <form method="post" action="{% url 'core:logout' %}">
                         {% csrf_token %}

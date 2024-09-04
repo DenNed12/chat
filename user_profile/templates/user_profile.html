@@ -4,14 +4,12 @@
 
 {% block content %}
 <h2>Profile</h2>
-<p>Username: {{ request.user.username }}</p>
+
 {% if profile.avatar %}
-    <img src="{{ profile.avatar.url }}" alt="Avatar">
-    <script>
-        let p = {{ profile.avatar }}
-        console.log(p)
-    </script>
+    <img class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="{{ profile.avatar.url }}"  alt="Avatar">
+    <p class="flex items-left justify-between px-5 py-6">Username: {{ request.user.username }}</p>
 {% else %}
+    <p>Username: {{ request.user.username }}</p>
     <p>No avatar available.</p>
 {% endif %}
 
