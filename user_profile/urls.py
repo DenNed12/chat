@@ -7,5 +7,6 @@ app_name = 'user_profile'
 
 urlpatterns = [
     path('profile/<int:pk>/', profile_view, name='profile'),
+    path('profile/<int:pk>/edit', profile_edit, name='profile_edit'),
 
-               ]
+    ]

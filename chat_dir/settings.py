@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'chat',
     'user_profile',
     'rest_framework',
+    'crispy_forms',
 
 ]
 
