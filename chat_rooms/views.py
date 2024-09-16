@@ -3,8 +3,9 @@ from .models import Room
 from django.contrib.auth.decorators import login_required
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Room, Message
+from .models import Room, Message,User
 from .serializers import RoomSerializer, MessageSerializer
+from django.views.generic import ListView, DetailView
 # Create your views here.
 
 @login_required
@@ -32,3 +33,6 @@ class GetRoomInfoView(APIView):
             many=True
         )
         return Response(serializer_for_queryset.data)
+
+
+

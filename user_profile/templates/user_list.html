@@ -1,0 +1,15 @@
+{% extends "core/index.html" %}
+
+{% block title %} List of all users {% endblock %}
+{% block content %}
+{% for profile in profiles %}
+    <div class ='w-full lg:w1/4 px-3 py-3 '>
+        <div class="p-4 bg-white shadow rounded-xl text-center">
+            <h3 class="mb-5 text-2xl font-semibold"> {{ profile.user.username }}</h3>
+            <h3 class="mb-5 text-2xl font-semibold"> {{ profile.avatar }}</h3>
+
+
+        </div>
+    </div>
+    {% endfor %}
+{% endblock content %}

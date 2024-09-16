@@ -12,6 +12,7 @@ def signup(request):
         if form.is_valid():
             print('Form is valid')
             user = form.save()
+            ## создать профиль!!!
             login(request, user)
             return redirect('core:frontpage')
         else:

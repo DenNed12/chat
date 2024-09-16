@@ -16,7 +16,7 @@
 {% endif %}
 <div>
 	<div>
-         <a href="{% url 'user_profile:profile_edit' %}" class='hover:text-gray-200'>Edit</a>
+         <a href="{% url 'user_profile:profile_edit' request.user.pk %}" class='hover:text-gray-200'>Edit</a>
     </div>
 </div>
 

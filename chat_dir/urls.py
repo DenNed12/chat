@@ -26,7 +26,8 @@ urlpatterns = [
     path('', include('core.urls')),
     path('rooms/', include('chat_rooms.urls')),
     path('profile/', include('user_profile.urls')),
-    path('api/rooms',GetRoomInfoView.as_view(),name='api')
+    path('api/rooms',GetRoomInfoView.as_view(),name='api'),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
